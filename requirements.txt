@@ -4,3 +4,4 @@ pandas
 python-dotenv
 pydantic
 agents-ai-sdk  # If you're using OpenAI's experimental agents SDK
+supabase
