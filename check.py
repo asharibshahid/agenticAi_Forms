@@ -177,11 +177,17 @@ st.markdown("""
     
     .stSelectbox label, .stTextInput label, .stTextArea label, .stNumberInput label, 
     .stMultiselect label, .stRadio label, .stCheckbox label, .stSlider label {
-        color: #000000 !important;
+        color: #000 !important;
         font-weight: 700 !important;
         font-size: 1.1rem !important;
     }
     
+
+
+
+
+
+            
     /* Input fields styling */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea,
@@ -528,7 +534,7 @@ Just write the plain message only — no HTML, formatting, or extra styling. jus
                 {features_html}
             </ul>
             <div style="margin-top: 2rem; padding: 1rem; background: rgba(220, 20, 60, 0.1); border-radius: 10px;">
-                <h4 style="color: #DC143C; margin: 0;">Investment: {price}</h4>
+                <h4 style="color: #DC143C; margin: 0;"> Cost: {price}</h4>
             </div>
         </div>
         """
@@ -666,7 +672,7 @@ def main():
 
         # Section 4: Online Marketing
         
-        st.subheader("📱 Online Marketing")
+        st.subheader("Socials Url Marketing")
 
         col1, col2 = st.columns(2)
         with col1:
@@ -762,7 +768,7 @@ def main():
                         success, result = save_to_supabase(form_data, proposal)
 
                         if success:
-                            st.success("✅ Your proposal and details were saved in our system.")
+                            st.success(" Your proposal and details were saved in our system.")
                         else:
                             st.warning("⚠️ Proposal saved but failed to send data to database.")
 
@@ -773,7 +779,7 @@ def main():
                                 {proposal}
                             </div>
                             <div style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;">
-                                Saved as: {filename}
+                                : Thanks You :
                             </div>
                         </div>
                         """, unsafe_allow_html=True)
@@ -783,9 +789,13 @@ def main():
                         
                         recommended_plan_info = ZAPPS_KNOWLEDGE_BASE["pricing_plans"][recommended_plan]
                         plan_html = agent.create_plan_card(recommended_plan_info, country, is_recommended=True)
-                        st.markdown('<div class="plans-container">', unsafe_allow_html=True)
-                        st.markdown(plan_html, unsafe_allow_html=True)
+                        st.markdown('<div class="plans-container style="margin-top: -40px;">', unsafe_allow_html=True)
+                        st.markdown(plan_html , unsafe_allow_html=True)
                         st.markdown('</div>', unsafe_allow_html=True)
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        
 
                     except Exception:
                         # Fallback if AI fails
@@ -796,6 +806,16 @@ def main():
                             </div>
                         </div>
                         """, unsafe_allow_html=True)
+                st.markdown("""
+    <div style="margin-top: 30px; text-align: center;">
+        <a href="https://wa.me/923702669133" target="_blank" style="background-color: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-size: 16px; margin-right: 10px;">
+            📞 Chat on WhatsApp
+        </a>
+        <a href="https://calendly.com/zappsconsulting-info/marketing-consulting-booking" style="background-color: #D44638; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-size: 16px;">
+            ✉️ Meeting
+        </a>
+    </div>
+""", unsafe_allow_html=True)
                         
     st.markdown("""Powwered By ZAPPS Consulting """, unsafe_allow_html=True)
 
